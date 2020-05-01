@@ -16,7 +16,9 @@
     "fix": "npm run lint -- --fix",
     "build": "babel src -d lib && webpack -p",
     "toc": "markdown-toc -i README.md",
-    "prepublishOnly": "npm test && npm run build && pkg-ok"
+    "prepublishOnly": "npm test && npm run build && pkg-ok",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -40,7 +42,8 @@
     "request": "^2.87.0",
     "server-destroy": "^1.0.1",
     "update-notifier": "^2.5.0",
-    "yargs": "^11.1.0"
+    "yargs": "^11.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -126,5 +129,6 @@
   },
   "jest": {
     "testURL": "http://localhost/"
-  }
+  },
+  "snyk": true
 }
